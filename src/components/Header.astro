@@ -1,0 +1,18 @@
+---
+import HeaderButton from "./HeaderButton.astro"
+---
+
+<header class="fixed z-50 top-2 left-1/2 -translate-x-1/2 flex items-center pl-4 gap-4 backdrop-blur rounded-[15px]">
+    <p class="text-3xl font-semibold translate-y-[3px]">DG</p>
+    <ul class="flex gap-4 p-4">
+        <HeaderButton name="Stack"/>
+        <HeaderButton name="Portfolio"/>
+        <HeaderButton name="Experience"/>
+    </ul>
+</header>
+
+<style>
+    p {
+        font-family: 'thunder', sans-serif;
+    }
+</style>
