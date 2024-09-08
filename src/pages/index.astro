@@ -1,0 +1,43 @@
+---
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Astro Locomotive Scroll Example</title>
+
+    <link rel="stylesheet" href="/src/styles/locomotive-scroll.css" />
+  </head>
+
+  <body class="bg-lightBlack" data-scroll-container>
+    <section data-scroll-section class="h-[100vh] flex flex-col p-2 lg:p-4">
+		<div class="flex-1"></div>
+		<h1 data-scroll data-scroll-speed="-1" data-scroll-class="scroll-class" data-scroll-repeat="true" class="text-8xl lg:text-9xl author-name">DAVID GÓMEZ</h1>
+	</section>
+	<section data-scroll-section class="h-[100vh] grid place-items-center bg-red-300">
+		<h2>sección 2</h2>
+    </section>
+  </body>
+</html>
+
+<script src="/src/scripts/smoothScroll.js"></script>
+
+<style is:global>
+  html {
+    background-color: #151515;
+    color: #fff;
+  }
+
+  .author-name {
+	opacity: 0;
+	transition: opacity 5s;
+  }
+
+  .scroll-class {
+	opacity: 1;
+  }
+  
+</style>
