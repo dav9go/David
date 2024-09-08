@@ -11,11 +11,11 @@ import '../styles/locomotive-scroll.css';
   </head>
 
   <body class="bg-lightBlack" data-scroll-container>
-    <section data-scroll-section class="h-[100vh] flex flex-col p-2 lg:p-4">
+    <section data-scroll-section class="h-[100dvh] flex flex-col p-2 lg:p-4">
 		<div class="flex-1"></div>
 		<h1 data-scroll data-scroll-speed="-1" data-scroll-class="scroll-class" data-scroll-repeat="true" class="text-8xl lg:text-9xl author-name">DAVID GÓMEZ</h1>
 	</section>
-	<section data-scroll-section class="h-[100vh] grid place-items-center bg-red-300">
+	<section data-scroll-section class="h-[100dvh] grid place-items-center bg-red-300">
 		<h2>sección 2</h2>
     </section>
   </body>
@@ -28,6 +28,12 @@ import '../styles/locomotive-scroll.css';
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
     multiplier: 0.4,
+    mobile: {
+       smooth: true
+   },
+   tablet: {
+       smooth: true
+   }
   });
 </script>
 
