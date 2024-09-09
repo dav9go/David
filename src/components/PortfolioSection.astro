@@ -1,0 +1,12 @@
+---
+import WorkCase from "./WorkCase.astro"
+---
+
+
+<section data-scroll-section class="min-h-[100vh] flex flex-col p-2 lg:p-4 overflow-hidden gap-6 xl:gap-20 mt-20">
+    <h2 data-scroll data-scroll-speed="-2" data-scroll-class="scroll-class" data-scroll-repeat="true" class="text-[5rem] leading-[5rem] xl:text-[12rem] xl:leading-[10rem] 2xl:leading-[12rem] author-name thunder-font">PORTFOLIO SHOWCASE</h2>
+    <div class="flex gap-10">
+        <WorkCase title="Web application 1" description="description bla bla bla" big={true}/>
+        <WorkCase title="Web application 1" description="description bla bla bla" big={false} />
+    </div>
+</section>

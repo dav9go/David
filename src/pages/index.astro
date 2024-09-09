@@ -1,6 +1,8 @@
 ---
 import '../styles/locomotive-scroll.css';
-import Header from "../components/Header.astro"
+import Header from "../components/Header.astro";
+import HeroSection from '../components/HeroSection.astro';
+import PortfolioSection from '../components/PortfolioSection.astro';
 ---
 
 <html lang="en">
@@ -8,33 +10,13 @@ import Header from "../components/Header.astro"
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <title>Astro Locomotive Scroll Example</title>
+    <title>David - React dev</title>
   </head>
 
-  <body class="bg-lightBlack" data-scroll-container>
+  <body class="bg-lightBlack scroll-smooth max-w-[2200px] mx-auto" data-scroll-container>
     <Header />
-    <section data-scroll-section class="relative h-[100vh] flex flex-col p-2 lg:p-4">
-    <div class="absolute left-0 top-4 h-2 w-screen bg-white"></div>
-    <div class="absolute left-0 top-10 h-2 w-screen bg-white"></div>
-		<div class="flex-1 flex flex-col xl:flex-row gap-20 mt-24 xl:mt-0">
-      <div class="flex flex-col justify-center">
-        <h2 class="flex flex-col text-6xl xl:text-9xl gap-6">
-          <span class="text-red-500 font-semibold">REACT</span> 
-          <span class="developer-text">DEVELOPER</span>
-        </h2>
-        <p class="ml-1 xl:ml-3 mt-8">Building high-class Web Applications since 2021©</p>
-      </div>
-      <div class="flex flex-col gap-5 justify-center text-4xl">
-        <h2 class="text-6xl xl:text-9xl">SOCIALS</h2>
-        <a href="https://github.com/dav9go/" target="_blank" class="hover:text-red-500 transition-colors w-min">Github</a>
-        <a href="https://www.linkedin.com/in/david9go/" target="_blank" class="hover:text-red-500 transition-colors w-min">LinkedIn</a>
-      </div>
-    </div>
-    <h1 data-scroll data-scroll-speed="-1" data-scroll-class="scroll-class" data-scroll-repeat="true" class="text-[5rem] leading-[5rem] xl:text-[12rem] xl:leading-[10rem] 2xl:leading-[12rem] author-name">DAVID GÓMEZ GONZÁLEZ</h1>
-	</section>
-	<section data-scroll-section class="h-[100dvh] grid place-items-center bg-red-300">
-		<h2>sección 2</h2>
-    </section>
+    <HeroSection />
+	  <PortfolioSection />
   </body>
 </html>
 
@@ -54,15 +36,6 @@ import Header from "../components/Header.astro"
     color: #fff;
   }
 
-  .author-name {
-	opacity: 0;
-	transition: opacity 5s;
-  }
-
-  .scroll-class {
-	opacity: 1;
-  }
-
   @font-face {
     font-family: 'thunder';
     src: url('/fonts/Thunder-MediumLC.woff2') format('woff2');
@@ -71,15 +44,7 @@ import Header from "../components/Header.astro"
     font-display: swap;
   }
 
-  h1 {
+  .thunder-font {
     font-family: 'thunder', sans-serif;
   }
-
-  .developer-text {
-      color: transparent;
-      -webkit-text-stroke: 2px white;
-      text-stroke: 2px white;
-      line-height: 1;
-    }
-  
 </style>
