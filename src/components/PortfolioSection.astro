@@ -4,9 +4,22 @@ import WorkCase from "./WorkCase.astro"
 
 
 <section data-scroll-section class="min-h-[100vh] flex flex-col p-2 lg:p-4 overflow-hidden gap-6 xl:gap-20 mt-20">
-    <h2 data-scroll data-scroll-speed="-2" data-scroll-class="scroll-class" data-scroll-repeat="true" class="text-[5rem] leading-[5rem] xl:text-[12rem] xl:leading-[10rem] 2xl:leading-[12rem] author-name thunder-font">PORTFOLIO SHOWCASE</h2>
-    <div class="flex gap-10">
-        <WorkCase title="Web application 1" description="description bla bla bla" big={true}/>
-        <WorkCase title="Web application 1" description="description bla bla bla" big={false} />
+    <h2 data-scroll  data-scroll-class="portfolio-scroll" data-scroll-repeat="true" class="text-[5rem] leading-[5rem] xl:text-[12rem] xl:leading-[10rem] 2xl:leading-[12rem] author-name thunder-font portfolio-word">PORTFOLIO SHOWCASE</h2>
+    <div class="flex flex-col lg:flex-row lg:gap-10">
+        <WorkCase title="Vision X Design - Web Design Agency" description="This is a showcase of a web design agency, Using Astro to leverage static site generation on build for faster load times and SEO optimization." big={true} isLeftAnimation={true}/>
+        <WorkCase title="Infinite scroll with virtualized lists" description="Demostrating performance optimization virtualizing large datasets and adding DOM nodes only for items on the user viewport. Using React." big={false} isLeftAnimation={false}/>
     </div>
 </section>
+
+<style>
+    .portfolio-word {
+        transform: translateX(-40px);
+        opacity: 0;
+        transition: transform 1s, opacity 4s;
+    }
+
+    .portfolio-scroll {
+        opacity: 1;
+        transform: translateX(0);
+    }
+</style>

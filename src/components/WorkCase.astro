@@ -1,11 +1,26 @@
 ---
-const {title, description, big} = Astro.props;
+const {title, description, big, isLeftAnimation} = Astro.props;
+
+const animationDirection = isLeftAnimation ? "-40px" : "40px";
 ---
 
-<article class={`flex flex-col gap-4 my-10 w-1/2 `}>
-    <div class={`rounded-[15px] overflow-hidden ${big ? "h-[550px]" : "h-[450px]"}`}>
+<article data-scroll data-scroll-class="article-scroll" data-scroll-repeat="true" class={`flex flex-col gap-4 my-10 lg:w-1/2 article-word`}>
+    <div class={`rounded-[15px] overflow-hidden ${big ? "h-[350px] lg:h-[450px]  2xl:h-[500px]" : "h-[350px] lg:h-[350px] 2xl:h-[400px]"}`}>
         <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1608610026254-da1c4f08ce9d?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
     </div>
-    <h3 class="text-xl">{title}</h3>
-    <p class="text-slate-400">{description}</p>
+    <h3 class="text-xl px-2">{title}</h3>
+    <p class="text-slate-400 px-2">{description}</p>
 </article>
+
+<style define:vars={{ animationDirection }}>
+    .article-word {
+        transform: translateX(var(--animationDirection));
+        opacity: 0;
+        transition: transform 1s, opacity 4s;
+    }
+
+    .article-scroll {
+        opacity: 1;
+        transform: translateX(0);
+    }
+</style>
